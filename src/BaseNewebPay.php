@@ -286,7 +286,7 @@ abstract class BaseNewebPay
         
         ];
 
-        $this->config = array_merge_recursive($default, $config);
+        $this->config = array_merge($default, $config);
         $this->MerchantID = $this->config['MerchantID'];
         $this->HashKey = $this->config['HashKey'];
         $this->HashIV = $this->config['HashIV'];
