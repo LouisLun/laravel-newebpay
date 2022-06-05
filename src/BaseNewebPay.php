@@ -11,7 +11,7 @@ abstract class BaseNewebPay
         Concerns\HasSender,
         Concerns\TradeData;
 
-    protected static $default = [
+    protected $default = [
 
         /*
          * 開啟藍新金流測試模式 (bool)
@@ -286,7 +286,7 @@ abstract class BaseNewebPay
      */
     public function __construct(array $config = [])
     {
-        $this->config = array_merge_recursive(static::$default, $config);
+        $this->config = array_merge_recursive($this->default, $config);
         $this->MerchantID = $this->config['MerchantID'];
         $this->HashKey = $this->config['HashKey'];
         $this->HashIV = $this->config['HashIV'];
