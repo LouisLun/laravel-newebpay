@@ -13,9 +13,9 @@ class NewebPayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(NewebPay::class, function ($app) {
-            return new NewebPay($app['config']);
-        });
+        // $this->app->singleton(NewebPay::class, function ($app) {
+        //     return new NewebPay($app['config']);
+        // });
     }
 
     /**

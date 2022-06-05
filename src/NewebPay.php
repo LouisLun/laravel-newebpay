@@ -119,6 +119,28 @@ class NewebPay extends BaseNewebPay
     }
 
     /**
+     * 信用卡授權
+     *
+     * @param  array  $data
+     *                       $data['no'] => 訂單編號
+     *                       $data['email'] => 購買者 email
+     *                       $data['cardNo'] => 信用卡號
+     *                       $data['exp'] => 到期日 格式: 2021/01 -> 2101
+     *                       $data['cvc'] => 信用卡驗證碼 格式: 3碼
+     *                       $data['desc] => 商品描述
+     *                       $data['amt'] => 綁定支付金額
+     *                       $data['inst'] => 分期付款 (0: 不啟用, 1: 啟用)
+     * @return \Ycs77\NewebPay\NewebPayCreditCard
+     */
+    public function creditcard($data)
+    {
+        $newebPay = new NewebPayCreditCard($this->config);
+        $newebPay->firstTrade($data);
+
+        return $newebPay;
+    }
+
+    /**
      * 信用卡授權 - 使用已綁定信用卡進行交易
      *
      * @param  array  $data
