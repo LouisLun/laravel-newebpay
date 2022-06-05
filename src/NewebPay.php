@@ -135,7 +135,7 @@ class NewebPay extends BaseNewebPay
     public function creditcard($data)
     {
         $newebPay = new NewebPayCreditCard($this->config);
-        $newebPay->firstTrade($data);
+        $newebPay->trade($data);
 
         return $newebPay;
     }
