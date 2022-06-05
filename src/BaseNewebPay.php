@@ -14,7 +14,7 @@ abstract class BaseNewebPay
     /**
      * The config instance.
      *
-     * @var \Illuminate\Contracts\Config\Repository
+     * @var array
      */
     protected $config;
 
@@ -73,12 +73,12 @@ abstract class BaseNewebPay
      * @param  \Illuminate\Contracts\Config\Repository  $config
      * @return void
      */
-    public function __construct(Config $config)
+    public function __construct(array $config)
     {
         $this->config = $config;
-        $this->MerchantID = $this->config->get('newebpay.MerchantID');
-        $this->HashKey = $this->config->get('newebpay.HashKey');
-        $this->HashIV = $this->config->get('newebpay.HashIV');
+        $this->MerchantID = $this->config['MerchantID'];
+        $this->HashKey = $this->config['HashKey'];
+        $this->HashIV = $this->config['HashIV'];
 
         $this->setTimestamp();
         $this->tradeDataBoot();
@@ -103,7 +103,7 @@ abstract class BaseNewebPay
      */
     public function generateUrl($path)
     {
-        return ($this->config->get('newebpay.Debug') ? $this->testUrl : $this->productionUrl).$path;
+        return ($this->config['Debug'] ? $this->testUrl : $this->productionUrl).$path;
     }
 
     /**

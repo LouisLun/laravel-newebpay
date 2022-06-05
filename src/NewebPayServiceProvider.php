@@ -25,8 +25,8 @@ class NewebPayServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/newebpay.php' => config_path('newebpay.php'),
-        ]);
+        // $this->publishes([
+        //     __DIR__.'/../config/newebpay.php' => config_path('newebpay.php'),
+        // ]);
     }
 }

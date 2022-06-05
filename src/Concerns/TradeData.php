@@ -43,7 +43,7 @@ trait TradeData
      */
     public function setVersion($version = null)
     {
-        $this->TradeData['Version'] = $version ?? $this->config->get('newebpay.Version');
+        $this->TradeData['Version'] = $version ?? $this->config['Version'];
 
         return $this;
     }
@@ -58,7 +58,7 @@ trait TradeData
      */
     public function setRespondType($type = null)
     {
-        $this->TradeData['RespondType'] = $type ?? $this->config->get('newebpay.RespondType');
+        $this->TradeData['RespondType'] = $type ?? $this->config['RespondType'];
 
         return $this;
     }
@@ -73,7 +73,7 @@ trait TradeData
      */
     public function setLangType($lang = null)
     {
-        $this->TradeData['LangType'] = $lang ?? $this->config->get('newebpay.LangType');
+        $this->TradeData['LangType'] = $lang ?? $this->config['LangType'];
 
         return $this;
     }
@@ -90,7 +90,7 @@ trait TradeData
      */
     public function setTradeLimit($limit = null)
     {
-        $this->TradeData['TradeLimit'] = $limit !== null ? $limit : $this->config->get('newebpay.TradeLimit');
+        $this->TradeData['TradeLimit'] = $limit !== null ? $limit : $this->config['TradeLimit'];
 
         return $this;
     }
@@ -103,7 +103,7 @@ trait TradeData
      */
     public function setExpireDate($day = null)
     {
-        $day = $day !== null ? $day : $this->config->get('newebpay.ExpireDate');
+        $day = $day !== null ? $day : $this->config['ExpireDate'];
 
         $this->TradeData['ExpireDate'] = Carbon::now()->addDays($day)->format('Ymd');
 
@@ -120,7 +120,7 @@ trait TradeData
      */
     public function setReturnURL($url = null)
     {
-        $this->TradeData['ReturnURL'] = $url ?? $this->config->get('newebpay.ReturnURL');
+        $this->TradeData['ReturnURL'] = $url ?? $this->config['ReturnURL'];
 
         return $this;
     }
@@ -136,7 +136,7 @@ trait TradeData
      */
     public function setNotifyURL($url = null)
     {
-        $this->TradeData['NotifyURL'] = $url ?? $this->config->get('newebpay.NotifyURL');
+        $this->TradeData['NotifyURL'] = $url ?? $this->config['NotifyURL'];
 
         return $this;
     }
@@ -151,7 +151,7 @@ trait TradeData
      */
     public function setCustomerURL($url = null)
     {
-        $this->TradeData['CustomerURL'] = $url ?? $this->config->get('newebpay.CustomerURL');
+        $this->TradeData['CustomerURL'] = $url ?? $this->config['CustomerURL'];
 
         return $this;
     }
@@ -166,7 +166,7 @@ trait TradeData
      */
     public function setClientBackURL($url = null)
     {
-        $this->TradeData['ClientBackURL'] = $url ?? $this->config->get('newebpay.ClientBackURL');
+        $this->TradeData['ClientBackURL'] = $url ?? $this->config['ClientBackURL'];
 
         return $this;
     }
@@ -179,7 +179,7 @@ trait TradeData
      */
     public function setEmailModify($isModify = null)
     {
-        $this->TradeData['EmailModify'] = ($isModify !== null ? $isModify : $this->config->get('newebpay.EmailModify')) ? 1 : 0;
+        $this->TradeData['EmailModify'] = ($isModify !== null ? $isModify : $this->config['EmailModify']) ? 1 : 0;
 
         return $this;
     }
@@ -192,7 +192,7 @@ trait TradeData
      */
     public function setLoginType($isLogin = false)
     {
-        $this->TradeData['LoginType'] = ($isLogin !== null ? $isLogin : $this->config->get('newebpay.LoginType')) ? 1 : 0;
+        $this->TradeData['LoginType'] = ($isLogin !== null ? $isLogin : $this->config['LoginType']) ? 1 : 0;
 
         return $this;
     }
@@ -208,7 +208,7 @@ trait TradeData
      */
     public function setOrderComment($comment = null)
     {
-        $this->TradeData['OrderComment'] = $comment !== null ? $comment : $this->config->get('newebpay.OrderComment');
+        $this->TradeData['OrderComment'] = $comment !== null ? $comment : $this->config['OrderComment'];
 
         return $this;
     }
@@ -221,7 +221,7 @@ trait TradeData
      */
     public function setPaymentMethod($paymentMethod = [])
     {
-        $paymentMethod = array_merge($this->config->get('newebpay.PaymentMethod'), $paymentMethod);
+        $paymentMethod = array_merge($this->config['PaymentMethod'], $paymentMethod);
 
         $this->TradeData['CREDIT'] = $paymentMethod['CREDIT']['Enable'] ? 1 : 0;
         $this->TradeData['ANDROIDPAY'] = $paymentMethod['ANDROIDPAY'] ? 1 : 0;
@@ -257,7 +257,7 @@ trait TradeData
      */
     public function setCVSCOM($cvscom = null)
     {
-        $this->TradeData['CVSCOM'] = $cvscom !== null ? $cvscom : $this->config->get('newebpay.CVSCOM');
+        $this->TradeData['CVSCOM'] = $cvscom !== null ? $cvscom : $this->config['CVSCOM'];
 
         return $this;
     }
@@ -279,7 +279,7 @@ trait TradeData
      */
     public function setLgsType($lgsType = null)
     {
-        $this->TradeData['LgsType'] = $lgsType !== null ? $lgsType : $this->config->get('newebpay.LgsType');
+        $this->TradeData['LgsType'] = $lgsType !== null ? $lgsType : $this->config['LgsType'];
 
         return $this;
     }
