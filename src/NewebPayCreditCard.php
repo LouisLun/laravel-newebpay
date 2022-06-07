@@ -53,7 +53,34 @@ class NewebPayCreditCard extends BaseNewebPay
         $this->TradeData['CardNo'] = $data['cardNo'];
         $this->TradeData['Exp'] = $data['exp'];
         $this->TradeData['CVC'] = $data['cvc'];
-        $this->TradeData['Inst'] = $data['inst'] ?? 0;
+        $this->TradeData['Inst'] = 0;
+
+        return $this;
+    }
+
+    /**
+     * 分期付款
+     * 
+     * @param array $data
+     *              $data['no'] 訂單id
+     *              $data['amt'] 金額
+     *              $data['desc'] 商品描述
+     *              $data['email'] 信箱
+     *              $data['cardNo'] 信用卡
+     *              $data['exp'] 信用卡期限
+     *              $data['cvc'] 信用卡後三碼
+     *              $data['inst'] 分期付款
+     */
+    public function instTrade($data)
+    {
+        $this->TradeData['MerchantOrderNo'] = $data['no'];
+        $this->TradeData['Amt'] = $data['amt'];
+        $this->TradeData['ProdDesc'] = $data['desc'];
+        $this->TradeData['PayerEmail'] = $data['email'];
+        $this->TradeData['CardNo'] = $data['cardNo'];
+        $this->TradeData['Exp'] = $data['exp'];
+        $this->TradeData['CVC'] = $data['cvc'];
+        $this->TradeData['Inst'] = 0;
 
         return $this;
     }
