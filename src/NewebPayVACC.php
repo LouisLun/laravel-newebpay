@@ -44,7 +44,7 @@ class NewebPayVACC extends BaseNewebPay
         $this->TradeData['Email'] = $email;
         $this->TradeData['Amt'] = $amt;
         $this->TradeData['ProdDesc'] = $desc;
-        $this->TradeData['ExpireDate'] = $expireDate->format('YYYYMMDD');
+        $this->TradeData['ExpireDate'] = $expireDate->format('Ymd');
         unset($this->TradeData['ReturnURL']);
 
         return $this;
