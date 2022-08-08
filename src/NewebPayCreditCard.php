@@ -53,7 +53,7 @@ class NewebPayCreditCard extends BaseNewebPay
         $this->TradeData['CardNo'] = $data['cardNo'];
         $this->TradeData['Exp'] = $data['exp'];
         $this->TradeData['CVC'] = $data['cvc'];
-        $this->TradeData['Inst'] = 0;
+        $this->TradeData['Inst'] = $data['inst'] ?? 0;
 
         return $this;
     }
@@ -80,7 +80,7 @@ class NewebPayCreditCard extends BaseNewebPay
         $this->TradeData['CardNo'] = $data['cardNo'];
         $this->TradeData['Exp'] = $data['exp'];
         $this->TradeData['CVC'] = $data['cvc'];
-        $this->TradeData['Inst'] = 0;
+        $this->TradeData['Inst'] = $data['inst'];
 
         return $this;
     }
