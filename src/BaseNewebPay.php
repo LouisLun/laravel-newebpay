@@ -82,6 +82,8 @@ abstract class BaseNewebPay
              */
         
             'Debug' => env('CASH_STORE_DEBUG'),
+
+            'Domain' => env('CASH_DOMAIN'),
         
             /*
              * 藍新金流商店代號
@@ -290,6 +292,9 @@ abstract class BaseNewebPay
         $this->MerchantID = $this->config['MerchantID'];
         $this->HashKey = $this->config['HashKey'];
         $this->HashIV = $this->config['HashIV'];
+        if (isset($this->config['Domain']) && $this->config['Domain']) {
+            $this->productionUrl = $this->config['Domain'];
+        }
 
         $this->setTimestamp();
         $this->tradeDataBoot();

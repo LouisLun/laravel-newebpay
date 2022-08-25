@@ -8,6 +8,8 @@ return [
 
     'Debug' => env('CASH_STORE_DEBUG'),
 
+    'Domain' => env('CASH_DOMAIN'),
+
     /*
      * 藍新金流商店代號
      */
